@@ -1,4 +1,69 @@
 \section*{Aufgabe 1}
 
-\subsection*{a)}
-Hier ist der kram von Aufgabe 1a
+\subsection*{$L_{1}$)}
+
+$L_{1} = \{w\in\{a,b\}^{*}| |w|_{a} = |w|_{b}\}$
+
+Angenommen ein DEA $m$ existiert mit $p$ Zuständen und $L(m) = L_{1}$.
+
+Dann gilt:
+
+$a^{2p}b^{2p} \in L_{1}$ und somit auch in $L(m)$
+
+Weiter existiert zwangsläufig $x = a^{m}, y = a^{n}, z = a^{2q}b^{2p}$ mit
+
+$n+m+q = 2p$ und $n \geq 1$ und $n+m \leq p$, so dass gilt:
+
+$\forall i \in \mathbb{N}_ : xy^{i}z \in L(m)$
+
+Für $i > 1$ aber ist $xy^{i}z \not\in L_{1}$  
+
+Dies steht im Wiederspruch zur Forderung $L_{1} = L(m)$ und 
+
+ein solches m kann folglich  nicht existieren.
+
+\subsection*{$L_{2}$)}
+
+
+$L_{2} = \{w\in\{a,b\}^{*}| w = w^{T}\}$
+
+Angenommen ein DEA $m$ existiert mit $p$ Zuständen und $L(m) = L_{2}$.
+
+Dann gilt:
+
+$a^{p+2}ba^{p+2} \in L_{2}$ und somit auch in $L(m)$
+
+Weiter existiert zwangsläufig $x = a^{m}, y = a^{n}, z = a^{q}ba^{p+2}$ mit
+
+$n+m+q = p+2$ und $n \geq 1$ und $n+m \leq p$, so dass gilt:
+
+$\forall i \in \mathbb{N}_ : xy^{i}z \in L(m)$
+
+Für $i > 1$ aber ist $xy^{i}z \not\in L_{2}$  
+
+Dies steht im Wiederspruch zur Forderung $L_{2} = L(m)$ und 
+
+ein solches m kann folglich  nicht existieren.
+
+\subsection*{$L_{3}$)}
+
+
+$L_{3} = \{a^{n!}|n \in \mathbb{N}_{0}\}$
+
+Angenommen ein DEA $m$ existiert mit $p$ Zuständen und $L(m) = L_{3}$.
+
+Dann gilt:
+
+$a^{p!} \in L_{3}$ und somit auch in $L(m)$
+
+Weiter existiert zwangsläufig $x = a^{m}, y = a^{n}, z = a^{p!-(m+n)}$ mit
+
+$n \geq 1$ und $n+m \leq p$, so dass gilt:
+
+$\forall i \in \mathbb{N}_ : xy^{i}z \in L(m)$
+
+Dann existieren aber $i \in \mathbb{N}$, so dass$xy^{i}z \not\in L_{3}$  
+
+Dies steht im Wiederspruch zur Forderung $L_{3} = L(m)$ und 
+
+ein solches m kann folglich  nicht existieren.
