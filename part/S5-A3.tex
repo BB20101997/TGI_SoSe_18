@@ -1,0 +1,47 @@
+\section*{H3}
+
+\subsection*{a)}
+	
+Sei $\Sigma$ Alphabet mit \textvisiblespace$ \notin \Sigma$ ,so dass $L = \Sigma^{*}$ unendliche Sprache.
+
+Dann akzeptiert die Turing Maschine 
+$T = (\{q_{0},q_{1}\},\Sigma,\Sigma \cup \{$\textvisiblespace$\},\delta,q_{0},\{q_{1}\})$ 
+
+mit $\delta(q_{0},r) = \{(q_{1},r,L)\}$ für alle $r \in \Sigma \cup \{$\textvisiblespace$\}$ die Sprache L.
+
+Also existiert eine Turing Maschine T
+
+welche eine unendliche Sprache akzeptiert ohne 
+
+das der Kopf sich um mehr als einen Schritt von der Startposition entfernt.
+
+\subsection*{b)}
+
+Im folgendem wird die Aussage 
+\begin{quote}
+	Zu jeder Turing Maschine $M_{1}$ existiert eine Turing Maschine $M_{2}$
+	mit nur einem Zustand und $L(M_{1}) = L(M_{2})$.
+\end{quote} widerlegt.
+
+Sei $M_{1}$ eine Turing Maschine,
+
+welche das Wort $a$ akzeptiert und das Wort $b$ verwirft.
+
+Dann kann keine Turing Maschine $M_{2}$ existieren,
+
+welche nur einen Zustand hat und für die $L(M_{1})=L(M_{2})$ gilt.
+
+Da $M_{2}$ nur einem Zustand hätte könnte $M_{2}$ entweder alle Wörter akzeptiert
+
+oder alle Wörter verwerfen.
+
+Da für $M_{1}$ sowohl ein Wort akzeptiert als auch verworfen werden muss,
+
+widerlegt dies die Aussage.
+
+\subsection*{c)}
+
+Die hier zu Beweisende Aussage wird durch die Turing Maschine T in a),
+welche die Bedingung, dass sich der Kopf nur nach links Bewegt, erfüllt, widerlegt,
+da $\varepsilon \in L(T)$, aber $\varepsilon \notin \Sigma^{+}$, und so mit nicht $L(T) \subseteq \Sigma^{+}$
+
