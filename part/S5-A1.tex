@@ -1,0 +1,58 @@
+\section*{H1}
+
+\subsection*{a)}
+
+$(q_{0},0011,Z_{0}) \to (q_{1},011,OZ_{0}) \to (q_{1},11,0OZ_{0}) \to (q_{2},1,OZ_{0}) \to (q_{3},\varepsilon,Z_{0})$
+
+\subsection*{b)}
+
+Da $K_{\alpha}$ nur begrenzten Speicher hat akzeptiert $K_{\alpha}$ nur die Sprache 
+$\{0^{n}1^{n}|n\in~\mathbb{N}_{<\alpha}\}$.
+
+\subsection*{c)}
+
+\subsubsection*{Reguläre Sprachen lassen sich durch DKAS erkennen.}
+Ein DKAS ist ein um $\varepsilon$-Transitionen und einen Kellerspeicher erweiterter DEA
+somit ist jede reguläre Sprache durch einen DKAS erkennen.
+
+\subsubsection*{Alle durch einen DKAS definierten Sprachen sind regulär.} 
+
+Sei $K = (Q,\Sigma,\Gamma,\delta,Z_{0},q_{0},F,c)$ DKAS.
+
+Da wir annehmen dürfen das für jedes $K$ mit $\varepsilon$-Transitionen
+
+einen äquivalenter DKAS ohne $\varepsilon$-Transitionen existiert,
+
+nehmen wir ab hier an das $K$ keine $\varepsilon$-Transitionen besitzt.
+
+Im folgendem definieren wir einen zu $K$ äquivalenten DEA $m$,
+
+was so mit zeigt das DKAS reguläre Sprachen definieren.
+
+\paragraph{} Wir definieren
+
+	$Q^{\prime} = Q \times \{x \in \Gamma^{*} | 1 \leq |x| < \alpha\}$
+	
+	$F^{\prime} = \{(q,k) \in Q^{\prime} | q \in F$, $k \in \Gamma^{*}\}$	
+	
+	$R \notin Q^ {\prime}$
+	
+	$q_{0}^{\prime} = (q_{0},Z_{0})$
+	
+	Für $(q,zr) \in Q'$ mit $|z| = 1$ und $a \in \Sigma$
+	
+	$\delta^{\prime}((q,zr),a) = 
+\begin{cases*}
+(q^{\prime},z^{\prime}r)  &, falls $\exists~(q^{\prime},z^{\prime}) \in \delta(q,a,z)$ \\
+(q^{\prime},z^{\prime}zr) &, falls $\exists~(q^{\prime},z^{\prime}) \in \delta(q,a,\varepsilon)$ \\
+R                         &, sonst 
+\end{cases*} $
+
+sowie
+
+$\delta^{\prime}(R,a) = R$
+
+$m = (Q^{\prime} \cup \{R\},\Sigma,\delta^{\prime},q_{0}^{\prime},F^{\prime})$
+
+
+
