@@ -1,0 +1,16 @@
+\section*{H4}
+
+\subsection{b)}
+Sei M eine TM die eine Codierung von $M$ einliest und folgende schritte macht:\\
+\begin{enumerate}
+\item
+Setzt eine Variable $i=1$
+\item
+Überprüft ob Wörter der Länge $i$ eine Ausgabe von $M$ erzeugt die i beschreibt. Wenn ja akzeptiere wenn nein setze $i=i+1$ und wiederhole diesen Schritt.
+\end{enumerate}
+Diese TM erkennt $L$ somit ist $L$ turing-erkennbar.
+
+\subsection{a)}
+Bilde das Komplement von $L$ das $\overline{L} = \{ \langle M \rangle | \forall w \in \Sigma^* $ gilt $ \varphi_{(M)} \neq |w| \}$ 
+Das wäre $HALT^{\Sigma^*}_{TM}$ was nicht turing-erkennbar ist.
+Da das Komplement von $L$ nicht turing-erkennbar ist ist L nicht turing-entscheidbar.
