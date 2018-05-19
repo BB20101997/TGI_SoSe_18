@@ -1,7 +1,33 @@
 \section*{Aufgabe 3}
 
 \subsection*{a)}
+Da eine Turingmaschine eine endliche Konstruktion besitzt,
+ist es möglich eine Turing Maschine zu definieren welche eine Turing Maschine einliest und hierbei die Zustände zählt,
+sollten hierbei mehr als 77 Zustände eingelesen weden würde dann akzeptiert werden,
+spätestens nach dem kompletten einlesen der Maschine, kann bei nicht ausreichend Zuständen Verworfen werden.
+Damit ist $STATE^{77}_{TM}$ entscheidbar.
 
 \subsection*{b)}
+
+Sei M eine Turing Maschine welche $HALT_{TM}^{\Sigma^{*}}$ erkennt. 
+Sei T eine Turing Maschine welche M simuliert und für jede eingabe welche keine Codierung von T ist mit dem Ergebnis von M terminiert.
+Für eine Eingaben welche T Codieren Terminiert T falls M's simulation ergibt T nicht in $HALT_{TM}^{\Sigma^{*}}$ und T geht in eine Endlosschleife falls M's simulation ergibt T in $HALT_{TM}^{\Sigma^{*}}$.
+
+Also terminiert T für jede Eingabe wenn M sagt das es dies nicht macht und T terminiert nicht immer wenn M sagt des es dies mache.
+Also $HALT_{TM}^{\Sigma^{*}}$ nicht entscheidbar.
+
 \subsection*{c)}
+
+Sei M Turing Maschine und q Zustand,
+Sei M' aus M erzeugt mit q einziger akzeptierender Zustand und M' ohne verwerfendem Zustand, bisher vorhandene terminierende Zustände werden duch Endlosschleifen ersetzt.
+
+Dann existiert eine Eingabe für M welche q erreicht genau dann wenn M' in $HALT_{TM}$.
+
+Da  $HALT_{TM}$ nicht entscheidbar ist auch $REACH_{TM}$
+nicht entscheidbar.
+
 \subsection*{d)}
+
+Hier für simmulieren wir M auf jeder möglichen Eingabe mit einer Länge bis zu 77. Dies ist eine endliche Menge an Eingaben, welche ausreicht da um mehr einzulesen mehr als 77 Schritte notwendig sind, außerdem kann nach 77 Schritten die Simulation abgebochen werden, wenn sie noch nicht terminiert hat, da dann das Ergebniss feststeht, somit ist jede simulation endlich.
+
+Somit ist $STEP_{TM}^{77}$ entscheidbar.
