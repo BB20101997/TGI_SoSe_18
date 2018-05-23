@@ -1,2 +1,23 @@
 \section*{Aufgabe 2}
 
+Sei M eine TM welche das INDEPENDENT-SET folgendermaßen löst:
+	
+	1) einen Grahpen G und ein k einliest
+
+	2) ein Set S von k Knoten aus G auswählt
+
+	3) dann für jede Kante in G prüft ob beide Knoten in S sind
+
+	4a) beide sind in S dan verwerfe
+
+	4b) wenn weitere Kanten vorhanden setzt bei 3) fort
+
+	4c) akzeptiere
+	
+	Sei E die Zahl der Kanten und V die Zahl der Knoten
+	
+	Dann ist $M$ Zeitlich Beschränkt durch die Schleife bei 3) und 4a)
+	durch das Polynom $E*k < E * V < max(E,V)^2$.
+	
+	
+	

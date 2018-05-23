@@ -1,2 +1,59 @@
 \section*{Aufgabe 3}
 
+\subsection*{a)}
+	Sei M deterministische TM die $CIRCLE^5$ folgendermaßen löst:
+	
+	1) Für $e_1$ Kante in $G$
+	
+	2) Für $e_2$ Kante in $G$
+
+	3) Für $e_3$ Kante in $G$
+
+	4) Für $e_4$ Kante in $G$
+
+	5) Für $e_5$ Kante in $G$
+
+	6) Überprüfe of die Kanten $e_1$ bis $e_5$ einen Kreis Bilden.
+	
+	7) Wenn $e_1$ bis $e_5$  einen Kreis bilden akzeptiere.
+
+	8) Wenn $e_5$ nicht letzte Kante in $G$ wähle nächste Kante bei 5)
+
+	9) Wenn $e_4$ nicht letzte Kante in $G$ wähle nächste Kante bei 4)
+
+	10) Wenn $e_3$ nicht letzte Kante in $G$ wähle nächste Kante bei 3)
+
+	11) Wenn $e_2$ nicht letzte Kante in $G$ wähle nächste Kante bei 2)
+
+	12) Wenn $e_1$ nicht letzte Kante in $G$ wähle nächste Kante bei 1)
+	
+	13) verwerfe
+	
+	Dann ist M's Laufzeit beschränkt durch $E^5$ mit $E$ anzahl der Kanten.
+	
+\subsection*{b)}
+	
+	Sei M eine TM die $CIRCLE^{half}$ folgendermaßen löst:
+	
+	1) Setze Zähler $n = 0$
+	
+	2) Lege ein Leeres Set an
+	
+	3) Für Kante $e$ in $G$
+	
+	4) Nehme Kante $e$ in Set oder nicht
+	
+	5) Wenn $e$ ins Set genommen wurde erhöhe $n$ um Eins
+	
+	6) Wenn $n$ nicht gleich $V/2$ und $e$ nicht letzte Kante in $G$ setzte bei 3) mit nächster Kante fort. 
+	
+	7)  Wenn $n \neq V/2$ verwerfe.
+	
+	8)  Wähle eine Permutation des Sets in eine Liste $l$
+	
+	9) Prüfe Bildet $l$ einen gültigen Pfad mit Anfang = Ende
+	
+	10) Prüfe ob jeder nicht Endknoten nur einmal auf dem Pfad liegt.
+	
+	Dann hat M Polynomiele Lauftzeit.
+	
