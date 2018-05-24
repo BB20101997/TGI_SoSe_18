@@ -1,2 +1,15 @@
 \section*{H1}
 
+Sei V eine TM die ein Codiertes Paar $ \langle w , c \rangle $ mit $w$ einem Graph und $c$ einer 4-Färbung annimmt sodass:
+
+	1) c auf den Graphen anwendet
+	
+	2) Für jede Kante prüft ob die verbundenen Knoten gleiche Farbe haben
+
+	3a) Wenn nicht prüfe nächste Kante	
+
+	3b)	haben, falls ja verwerfe
+
+    3c) Wenn keine Kanten mehr zu überprüfen sind akzeptiere 
+
+Da dies in polinomieller Zeit $O(|V|+|E|)$ ended ist V ein Verifikator für 4Colour	 und somit gilt $4Colour \in NP$.
