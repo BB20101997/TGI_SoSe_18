@@ -1,0 +1,26 @@
+\section*{H5}
+
+\subsection*{2)}
+
+Jeder akzeptierenden Zustände wird nicht akzeptierend und erhält eine $\varepsilon$ 
+Transition zu einem neuen akzeptierendem Zustand ohne ausgehende Transitionen.
+
+$Q_{M_2} = Q_N \cup \{q_F\}$
+
+$q_{0_{M_2}} = q_{0_N}$
+
+$\forall q \in Q_{M_2}, a \in \Sigma \cup \{\varepsilon\}:
+\delta_{M_2}(q,a) =
+\begin{cases}
+\varnothing \textit{ , für }q = q_F \\
+\varnothing \textit{ , für }q \notin F_N \wedge a = \varepsilon \\
+\{\delta_N(q,a)\} \textit{ , für } q \neq q_F \wedge a \neq \varepsilon \\
+\{q_F\} \textit{ , für } q \in F_N \wedge a = \varepsilon
+\
+\end{cases}$
+
+$F_{M_2} = \{q_F\}$
+
+\subsection*{4)}
+
+Wir kopieren die Zustände wie bei M_3 wobei jeder Zustand nur eine nicht Epsilon Transition hat für das Symbol welches der Zustand im Index hat, zwischen den Zuständen mit dem gleichen Zustand im Index existieren Epsilon transitionen.

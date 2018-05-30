@@ -1,0 +1,49 @@
+\section*{H4}
+
+\subsection*{1)}
+
+Die Aussage in Worten: Es gibt keine Transition zum Startzustand.
+$N$ erweitern wir nun um einen neuen Startzustand $q_{0M}$ und entsprechende Transitionen zu $M_1$.
+
+$q_{0_N} \in F_N \Leftrightarrow q_{0_{M_i}} \in F_{M_1}$ 
+
+$F_N  =  F_{M_1} \setminus \{q_{0_{M_i}}\}$
+
+$Q_{M_1} = Q_N \cup \{q_{0_{M_i}}\}$
+
+$\forall q \in Q_{M_1}, a \in \Sigma: \delta_{M_1}(q,a) = 
+\begin{cases}
+\delta_N(q,a) \textit{ , für }q \neq q_{0_{M_1}} \\
+\delta_N(q_{0_N},a) \textit{ , für }q = q_{0_{M_1}}
+\end{cases}$ 
+
+\subsection*{2)}
+
+Die Aussage in Worten: Alle Zustände für die eine ausgehende Transition existiert sind nicht akzeptierende Zustände.
+
+Da bei DEA's für jeden Zustand und jedes Eingabe Symbol ein Folge Zustand durch $\delta_{M_2}$ definiert sein muss existiert immer eine  ausgehende Transition, somit darf kein Zustand Endzustand sein d.h. $M_1$ kann nur für $L(N) = \varnothing$  definiert werden als ein Automaten mit einem nicht akzeptierendem Zustand und einem Self-Loop für alle Eingabesymbole.
+
+
+\subsection*{3)}
+
+Die Aussage in Worten: Wenn zwei Transitionen zum selben Zustand führen dann waren die Eingabesymbole identisch.
+
+Wir erstellen für jedes Eingabesymbol eine Kopie jedes Zustandes.
+
+$Q_{M_3} = \{q_{(q_N,a)}|q_N \in Q_N \wedge a \in \Sigma \}$
+
+Wähle einen der Zustände mit $q_{0_N}$ im Index als Startzustand.
+
+$q_{0_{M_3}} \in \{q(q_{0_N},a) \in Q_{M_3}| a \in \Sigma \}$
+
+$\forall q_{(q_N,a_q)} \in Q_{M_3}, a \in \Sigma: 
+\delta_{M_3}((q_N,a_q),a) = q_{(\delta_N(q_N,a),a)} $
+
+
+$F_{M_3} = \{q_{(q_N,a)} \in Q_{M_3} | q_N \in F_N\}$
+
+\subsection*{4)}
+
+Die Aussage in Worten: Wenn ein Zustand q zwei Transitionen (dürfen auch identisch sein) besitzt sind die Eingabesymbole der Transitionen gleich.
+
+Da für jeden Zustand und jedes Eingabesymbol beim DEA eine Transition definiert sein muss ist für $|\Sigma|>1$ die Aussage immer Falsch und für $|\Sigma| = 1$ immer Wahr.
