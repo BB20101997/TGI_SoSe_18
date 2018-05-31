@@ -16,11 +16,29 @@ $\forall q \in Q_{M_2}, a \in \Sigma \cup \{\varepsilon\}:
 \varnothing \textit{ , für }q \notin F_N \wedge a = \varepsilon \\
 \{\delta_N(q,a)\} \textit{ , für } q \neq q_F \wedge a \neq \varepsilon \\
 \{q_F\} \textit{ , für } q \in F_N \wedge a = \varepsilon
-\
 \end{cases}$
 
 $F_{M_2} = \{q_F\}$
 
 \subsection*{4)}
 
-Wir kopieren die Zustände wie bei M_3 wobei jeder Zustand nur eine nicht Epsilon Transition hat für das Symbol welches der Zustand im Index hat, zwischen den Zuständen mit dem gleichen Zustand im Index existieren Epsilon transitionen.
+Wir kopieren die Zustände ähnlich wie bei $M_3$ wobei jeder Zustand nur eine nicht Epsilon Transition hat für das Symbol welches der Zustand im Index hat, zwischen den Zuständen mit dem gleichen Zustand im Index existieren Epsilon transitionen.
+
+$Q_{M_4} = \{q_{(q_N,a)}|q_N \in Q_N \wedge a \in \Sigma \}$
+
+Wähle einen der Zustände mit $q_{0_N}$ im Index als Startzustand.
+
+$q_{0_{M_4}} \in \{q(q_{0_N},a) \in Q_{M_4}| a \in \Sigma \}$
+
+$\forall q_{(q_N,a_q)} \in Q_{M_4}, a \in \Sigma \cup \{\varepsilon\}: 
+\delta_{M_4}(q_{(q_{N},a_{q})},a) =
+\begin{cases}
+\{q_{(p,b)}|p = \delta_{N}(q_{N},a_{q}) \wedge b \in \Sigma\} \textit{ , für } a_q = a \\
+\{q_{(q_{N},b)}|b \in \Sigma\} \textit{ , für }  a = \varepsilon \\
+\varnothing \textit{ , für } a_q \neq a \wedge a \neq \varepsilon \\
+
+
+\end{cases}$
+
+
+$F_{M_4} = \{q_{(q_N,a)} \in Q_{M_4} | q_N \in F_N\}$
