@@ -1,2 +1,44 @@
 \section*{H1}
 
+\subsection*{a)}
+\includegraphics[scale=1]{part/TGIS08A01a}
+
+\subsection*{b)}
+Potenzmengen: \\
+\begin{tabular}{ l | l | l | l | l }
+Ausgangsmenge & Eingabe a & Eingabe b & Eingabe c & Eingabe $\varepsilon$ \\
+\hline
+$\{ q_0 , q_1 , q_2, q_3 \}$ & $\{  q_1 , q_3 \}$ & $\{ q_2, q_3 \}$ & $\{  q_1 , q_2 \}$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_0 , q_1 , q_2 \}$ & $\{ q_1 \}$ & $\{ q_2 \}$ & $\{  q_1 , q_2\}$ & $\{  q_1 , q_2, q_3 \}$\\
+$\{ q_0 , q_1 , q_3 \}$ & $\{ q_1 , q_3 \}$ & $\{ q_3 \}$ & $\{ q_1 \}$ & $\{  q_1 , q_2, q_3 \}$\\
+$\{ q_0 ,  q_2, q_3 \}$ & $\{ q_3 \}$ & $\{ q_2, q_3 \}$ & $\{ q_2 \}$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_1 , q_2, q_3 \}$ & $\{ q_1 , q_3 \}$ & $\{ q_2, q_3 \}$ & $\{ q_1 , q_2 \}$ & $\emptyset $\\ 
+$\{ q_0 , q_1  \}$ & $\{ q_1 \}$ & $\emptyset$ & $\{ q_1 \}$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_0 , q_2 \}$ & $\emptyset$ & $\{ q_2\}$ & $\{ q_2 \}$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_0 , q_3 \}$ & $\{ q_3 \}$ & $\{  q_3 \}$ & $\emptyset$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_1 , q_2 \}$ & $\{ q_1  \}$ & $\{ q_2 \}$ & $\{ q_1 , q_2 \}$ & $\emptyset$\\
+$\{ q_1 , q_3 \}$ & $\{ q_1 , q_3 \}$ & $\{ q_3 \}$ & $\{  q_1  \}$ & $\emptyset$\\
+$\{ q_2, q_3 \}$ & $\{ q_3 \}$ & $\{ q_2, q_3 \}$ & $\{ q_2\}$ & $\emptyset$\\
+$\{ q_0 \}$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $\{ q_1 , q_2, q_3 \}$\\
+$\{ q_1 \}$ & $\{ q_1 \}$ & $\emptyset$ & $\{ q_1 \}$ & $\emptyset$\\
+$\{ q_2 \}$ & $\emptyset$ & $\{ q_2 \}$ & $\{ q_2 \}$ & $\emptyset$\\
+$\{ q_3 \}$ & $\{ q_3 \}$ & $\{ q_3 \}$ & $\emptyset$ & $\emptyset$\\
+$\emptyset$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $\emptyset$\\
+\end{tabular}
+\\
+\includegraphics[scale=0.9]{part/TGIS08A01b}
+
+
+\subsection*{c)}
+
+KFG $G = \{ \{S,A_0,A_1,A_2,B_0,B_1,B_2 \}, \{a,b,c \}, P, S \}$
+mit : \\
+$P = \{ \\
+        \{S \rightarrow aA_0 | bA_1 | cA_2 \},\\
+        \{A_0 \rightarrow aA_0 | bB_2 | cB_0 \},\\
+        \{A_1 \rightarrow aB_2 | bA_1 | cB_1 \},\\
+        \{A_2 \rightarrow aB_0 | bB_1 | cA_2 \},\\
+        \{B_0 \rightarrow aB_0 | cB_0 | \varepsilon \},\\
+        \{B_1 \rightarrow bB_1 | cB_1 | \varepsilon \},\\
+        \{B_2 \rightarrow aB_2 | bB_2 | \varepsilon \},\\
+          \} $
