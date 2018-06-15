@@ -1,1 +1,37 @@
 \section*{Aufgabe 1}
+
+Sei $\Sigma = \{a,b,c\}$ ein Alphabet und $L = \{ a^nb^mc^k|n,m,k \in \mathbb{N} \} \subseteq \Sigma^*$
+
+\subsection*{a)}
+
+\subsubsection*{i)}
+
+Die Äquivalenz $\varepsilon \simeq_L a$ ist gültig da sowohl für $a$ als auch für $\varepsilon$
+jeder gültige Suffix jedes Wort in L ist.
+
+\subsubsection*{ii)}
+
+Die Äquivalenz $a \simeq_L b$ ist nicht gültig da für $b$ $a$ kein gültiger Suffix ist aber für $a$ ist $a$ ein gültiger Suffix.
+
+\subsubsection*{iii)}
+
+Die Äquivalenz $ab \simeq_L ba$ ist nicht gültig da für $ab$ ein gültiges Wort in L ist und $ba$ nicht, aber gültige Wörte können nicht mit ungültigen Wörten in Äquivalenz stehen.
+
+\subsection*{b)}
+
+$u = aabac \in \Sigma^*$ ist kein gültiges Wort in der Sprache L, alle ungültigen Worte bilden in L eine Äquvalenzklasse, daher kommt jeder in L ungültige Wort v für $v \in [u]_{\simeq_L}$ in frage z.B. $v = ba$.
+
+\subsection*{c)}
+Die Aäuivalenzklasse von $ab$,$bc$,$ca$ bezüglich $\simeq_L$ sind wie folgt:
+
+$[ab]_{\simeq_L} = \{a^nb^{m+1}|n,m \in \mathbb{N}\} $
+
+$[bc]_{\simeq_L} = \{a^nb^mc^{k+1}|n,m,k \in \mathbb{N} \}$ 
+
+$[ca]_{\simeq_L} = \Sigma^* \setminus L$ 
+
+\subsection*{d)}
+
+$S = \{abac^n | n \in \mathbb{N} \} \cup \{babc^n | n \in \mathbb{N} \} \cup \{cbc^n|n\in \mathbb{N}\} \cup \{\varepsilon\}$
+
+erfüllt die Bedingungen $\varepsilon, aba \in S$, $c \simeq_S ba$, $c \not\simeq_S ab$ und $aba \simeq_S bab$.
