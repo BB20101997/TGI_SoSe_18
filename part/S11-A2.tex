@@ -1,2 +1,45 @@
 \section*{Aufgabe 2}
 
+Sei $\Sigma = \{ a, b \}$ ein Alphabet und $L =\{ww^T|w \in \Sigma^+\}\subseteq \Sigma^*$
+eine Sprache. Weiter sei die kontextfreie
+Grammatik $G = (N, \Sigma, P, S)$ mit $N = \{ S \}$ und $P$ enthält die folgenden Produktionen
+$S → aSa | bSb | aa | bb$
+gegeben.
+
+\subsection*{Behauptung}
+
+$L = L(G)$
+
+\subsection*{Beweis}
+
+\subsection*{IA}
+	
+	Sei $w \in \Sigma$,
+	
+	dann ist $w \in \Sigma^+$ mit $|w| = min(n\in\mathbb{N}| \exists v \in \Sigma^+ : n = |v|)$.
+	
+	Sei $v = ww^T$.
+
+	Dann ist $v \in L$ und $v = aa$ oder $v = bb$.
+	
+	Die Wörter in $L(G)$ mit Ableitungen der Länge 1 sind $aa$ und $bb$
+	durch die Ableitungsregeln $S \to aa$ bzw. $S \to bb$.
+				
+\subsection*{IV}
+	Sei $v \in L$ und $v \in L(G)$.
+	
+\subsection*{IS}
+
+	Sei $\eta \in \Sigma$ und $v^\prime = \eta v\eta$.
+	
+	Nach definition von $L$ und $v$ existiert $w$ mit $v = ww^T$.
+	
+	Dann ist auch $v^\prime \in L$, da $v^\prime = w^\prime w^{\prime T}$ für $w^\prime = \eta w$.
+
+	Somit $v^\prime \in L$
+		
+	Nach definition von $G$ und $v$ existiert eine Ableitung A mit $S \Rightarrow^*_A v$.	
+	
+	Dann ist auch $v' \in L(G)$ da G v' erzeugt mit der Ableitung $S \Rightarrow \eta S\eta \Rightarrow^*_A \eta v\eta = v'$.
+	
+	Somit ist $\eta v\eta $ auch in $L(G)$.

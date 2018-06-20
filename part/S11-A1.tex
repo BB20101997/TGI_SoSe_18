@@ -1,2 +1,23 @@
 \section*{Aufgabe 1}
 
+Sei $G = (N, \Sigma, P, S)$ eine kontextfreie Grammatik, welche eine Sprache $L$ generiert. Wir definieren $G^{\prime} =
+(N, \Sigma, P \cup \{ S \to SS \} , S)$. 
+
+\subsection*{Behauptung}
+
+Dann gilt $ L(G^{\prime}) = L^*$ im allgemeinen nicht.
+
+\subsection*{Beweis}
+
+Sei $G = (\{S\},\{a\},\{S \to a\},S)$.
+
+Dann gilt
+	 $L = \{a\}$ und
+	 $G^{\prime} = (\{S\},\{a\},\{S\to a , S \to SS\},S)$.
+	 
+	 Dann gilt  $\varepsilon \notin L(G^\prime)$ offentsichtlich, da $G^\prime$ keine Regel enthält welche eine Nicht-Terminal durch $\varepsilon$ ersetzt.
+	 
+	 Damit aber, da $\varepsilon \in L^*$ gilt, gilt $L(G)\neq L(G^\prime)$.
+	 
+	 
+	 
