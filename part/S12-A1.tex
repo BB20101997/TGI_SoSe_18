@@ -1,0 +1,47 @@
+\section*{Aufgabe 1}
+
+Sei $\Sigma = \{a\} $ ein Alphabet und
+$ L=\{a^n\in\Sigma^* |n \in \mathbb{N}_{>0} \textit{ und n ist Primzahl}\} $
+
+\subsubsection*{Behauptung}
+
+L ist nicht kontextfrei.
+
+\subsubsection*{Beweis}
+
+Wäre L eine kontextfreie Sprache dann existiert nach Pumping Lemma $p \in \mathbb{N}_{>0}$, 
+
+sodass für alle $w \in L$ mit $|w|\geq p$ eine Zerlegung $w = uxyzv$ mit $u,x,y,z,v \in \Sigma^*$ existiert,
+
+sodass $|xz|>0$ und $|xyz| \leq p$ und $\forall i \geq 0: ux^i yz^i v \in L$ gilt.
+
+\paragraph*{}~
+
+Sei $w \in L\setminus\{aa\}$ mit $|w|\geq p$ und einer Zerlegung $w = uxyzv$ mit $u,x,y,z,v \in \Sigma^*$, sodass $|xz|>0$ und $|xyz| \leq p$.
+
+
+\paragraph*{}~
+
+Beh.: Es existiert $i \in \mathbb{N}_{0}$ mit $ux^i yz^i v \notin L$.
+
+
+\paragraph*{}~
+
+Sei $k = |uyv|$,  $l = |xz|$ und $n = k+l$.
+
+Da $\Sigma$ nur a enthält ist dann $w = uxyzv = uyvxz = a^k+a^l =a^n.$
+
+Sei dann:
+
+$\forall i \in \mathbb{N}: w_i = ux^iyz^iv $ 
+
+Dann gilt
+
+$w_i = ux^iyz^iv =uyv(xz)^i = a^{k+il}$
+
+$w_k = a^{k+kl} = a ^ {k(l+1)}$
+
+Dann ist $w_k$ aber nicht in $L$ da $k(l+1)$ keine Primzahl ist.
+
+Somit ist das Pumping Lemma nicht erfüllt und L keine kontextfreie Grammatik.
+
