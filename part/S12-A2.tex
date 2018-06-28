@@ -6,7 +6,7 @@ $FVS \in NPC$
 
 \subsection*{Beweis}
 
-$FVS \in NP$ nach Vorlesung bekannt.
+$FVS \in NP$ ist nach Vorlesung bekannt.
 
 Es bleibt zu zeigen FVS NP-Schwere.
 
@@ -14,10 +14,10 @@ Dazu zeigen wir \textit{Vertex-Cover} $\leq_P FVS$,
 da Vertex-Cover NP-Schwere ist damit dann auch FVS NP-Schwere.
 
 Sei $f: \textit{Vertex-Cover} \to FVS, ((V,E),k) \mapsto ((V,E^\prime),k)$ mit
+
  $E^\prime = \{(a,b) | (a,b) \in E \vee (b,a) \in E  \}$.
  
-Zu zeigen bleigt $\forall w \in \textit{Vertex-Cover}$ gilt
-$w \in \textit{Vertex-Cover} \Leftrightarrow f(w) \in FVS$
+Zu zeigen bleigt $w \in \textit{Vertex-Cover} \Leftrightarrow f(w) \in FVS$
 
 Sei $((V,E),k) =  w$.
 
