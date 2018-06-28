@@ -1,11 +1,55 @@
 \section*{Aufgabe 2}
 
-Sei $(G,k) =  w \in  \textit{Vertex-Cover}$.
+\subsection*{Behauptung}
+
+$FVS \in NPC$
+
+\subsection*{Beweis}
+
+$FVS \in NP$ nach Vorlesung bekannt.
+
+Es bleibt zu zeigen FVS NP-Schwere.
+
+Dazu zeigen wir \textit{Vertex-Cover} $\leq_P FVS$,
+da Vertex-Cover NP-Schwere ist damit dann auch FVS NP-Schwere.
 
 Sei $f: \textit{Vertex-Cover} \to FVS, ((V,E),k) \mapsto ((V,E^\prime),k)$ mit
  $E^\prime = \{(a,b) | (a,b) \in E \vee (b,a) \in E  \}$.
  
- Dann ist $f$ linear in der Anzahl der Kanten.
- 
+Zu zeigen bleigt $\forall w \in \textit{Vertex-Cover}$ gilt
+$w \in \textit{Vertex-Cover} \Leftrightarrow f(w) \in FVS$
 
- Dann sind die Knote des FVS die Knoten des Vertex-Covers.
+Sei $((V,E),k) =  w$.
+
+Dann ist $((V,E^\prime),k) = f(w)$
+
+\subsubsection*{"$\Rightarrow$"}
+Sei $w \in \textit{Vertex-Cover}$.
+
+Dann existiert eine Knoten Menge $t$ welche ein $k$ Vertex-Cover für $(V,E)$ ist.
+
+$\forall (a,b) \in E, \exists v \in t: v \in \{a,b\}$ nach definition von $t$
+
+Sei dann $(a,b) \in E^\prime$, dann ist $(a,b)$ oder $(b,a)$ 
+in $E$ nach definition von $E^\prime$ und es gilt $\exists v \in t : v \in \{a,b\}$
+
+Dann ist $t$ auch ein $k$ FVS für $(V,E^\prime)$ da der resultierende Graph durch entfernen der Knoten in $t$ keine Kanten und somit keine Kreise enthält, also $f(w) \in FWS$
+
+
+\subsubsection*{"$\Leftarrow$"}
+
+Sei $f(w) \in FVS$.
+
+Dann existiert eine Knoten Menge $t$ welche ein $k$ FVS für $(V,E^\prime)$ ist.
+
+Dann gilt $\forall (a,b) \in E^\prime : (b,a) \in E^\prime$ nach definition von $E^\prime$.
+
+D.h. für jede Kannte $(a,b)$ existiert der Kreis $a \rightleftarrows b$.
+
+$\Rightarrow \forall (a,b) \in E^\prime ,\exists v \in t: v \in \{a,b\}$ nach definition von $t$.
+
+$E \subseteq E^\prime$ geht aus der definition von $E^\prime$ direkt hervor.
+
+Also gilt $\forall (a,b) \in E , \exists v \in t : v \in \{a,b\} $
+
+Dann ist $t$ ein $k$ Vektor-Cover für $(V,E)$, also $w \in \textit{Vertex-Cover}$.
