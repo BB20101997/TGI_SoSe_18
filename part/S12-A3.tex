@@ -26,7 +26,7 @@ Dies ist in Polinominalzeit zu erzeugen da:
 \item Der 1. schritt Konstant viel zeit braucht.
 \item Der 2. Schritt maximal k mal pro Ungleichung ausgeführt wird und die Codierung maximal polinominell ist 
 \item Der 3. Schritt maximal k mal pro Ungleichung ausgeführt wird und die Codierung maximal polinominell ist 
-\item Der 4. Schritt Konstant viel zeit verbraucht und die Schritte 1-3 maximal l mal ausführen lässt.
+\item Der 4. Schritt Konstant viel zeit verbraucht und die Schritte 1-3 maximal $l$ mal ausführen lässt.
 
 \end{list}
 
@@ -42,6 +42,31 @@ Zeige $LP_{\{0,1\}} \in NP$ über polinominellen Verifikator über Eingabe $<<U>
 \item Prüfe ob Ungleichung erfüllt ist wenn nicht verwerfe (Polinomiell da nur Addition und Multiplikation)
 \item Wenn $i+1 \leq l$ setze $i=i+1$ und gehe zu 2. , wenn nicht akzeptiere (Polinominell da nur $1$ vergleich und maximal l Widerholungen.) 
 \end{enumerate}
-Dieser Verifikator prüft ob $e$ eine Lösung für $<U>$ ist in $O(l*k)$ Zeit 
+Dieser Verifikator prüft ob $e$ eine Lösung für $<U>$ ist in $O(l*k)$ Zeit.\\
 
-Sei $((X_1,\ldots ,X_k),(K_1, \ldots , K_l)) \in 3SAT$ mit $(X_1,\ldots ,X_k)$ als $k$ Variablen und $(K_1, \ldots , K_l$ als $l$ Klauseln. 
+Sei $((X_1,\ldots ,X_k),(K_1, \ldots , K_l)) \in 3SAT$ mit $(X_1,\ldots ,X_k)$ als $k$ Variablen und $(K_1, \ldots , K_l)$ als $l$ Klauseln. Dann bestehen die Klauseln aus 3 Literalen die negiert seien können, sei $K_i$ mit $i \in \{ 1, \ldots , l\}$ Klausel der Form $(L_j \vee L_o \vee L_p)$ mit $j,o,p \in \{ 1, \ldots , k\}$ da die Reihenfolge von Literalen egal ist kann O.b.d.A angenommen werden dass $K_i$ 4 Zustände haben kann:
+\begin{list}{}{}
+\item $(X_j \vee X_o \vee X_p)$
+\item $( \neg X_j \vee X_o \vee X_p)$
+\item $(\neg X_j \vee \neg X_o \vee X_p)$
+\item $( \neg X_j \vee \neg X_o \vee \neg X_p)$
+\end{list}
+Bilde ein neue Ungleichung $u_i$ mit $n_i=1-($Anzahl $\neg$ Literale$)$ und $m_{i,j}=1$ wenn Literal nicht negiert ist und $m_{i,j}=-1$ wenn doch, für $o,p$ dasselbe.
+Dann gilt:
+
+\begin{list}{}{}
+\item $(X_j \vee X_o \vee X_p) \Rightarrow 1 \leq 1*X_j+1* X_o + 1*X_p$
+\item $( \neg X_j \vee X_o \vee X_p) \Rightarrow  0 \leq -1*X_j+1* X_o + 1*X_p$
+\item $(\neg X_j \vee \neg X_o \vee X_p) \Rightarrow -1 \leq -1*X_j-1* X_o + 1*X_p$
+\item $( \neg X_j \vee \neg X_o \vee \neg X_p) \Rightarrow -2 \leq -1*X_j-1* X_o - 1*X_p$
+\end{list}
+Dann gelten die Ungleichungen nur dann nicht wenn die Kauseln nicht gelten.
+\begin{list}{}{}
+\item[$(X_j \vee X_o \vee X_p)$] $(X_j=0, X_o=0, X_p=0) \Rightarrow 1 \leq 1*0+1* 0 + 1*0=0$ Und $1 \nleq 0$
+\item[$( \neg X_j \vee X_o \vee X_p)$] $( X_j=1 , X_o=0, X_p=0) \Rightarrow  0 \leq -1*1+1* 0 + 1*0=-1$ Und $0 \nleq -1$
+\item[$(\neg X_j \vee \neg X_o \vee X_p)$] $(X_j=1, X_o=1, X_p=0) \Rightarrow -1 \leq -1*1-1* 1 + 1*0=-2$ Und $-1 \nleq -2$
+\item[$( \neg X_j \vee \neg X_o \vee \neg X_p)$] $( X_j=1, X_o=1,X_p=1) \Rightarrow -2 \leq -1*1-1* 1 - 1*1=-3$ und $-2 \nleq -3$
+\end{list}
+Die Rechten Seiten der Ungleichungen sind bei diesen Eingaben um 1 kleiner als die linken Seiten und alle Änderungen der Variablen erhöhen den Wert des Terms um 1 das heißt die Ungleichungen gelten für gültige Belegungen der Klauseln und und Gelten nicht für ungültige Belegungen. Diese Transformation einer Klausel funktioniert in Konstanter Zeit da Maximal 3 Literale pro Klausel Vorkommen. Nachdem dieser Vorgang für Alle Klauseln durchgeführt wurde liegt diese Transformation in $O(l)$ da es $l$ Klauseln gibt.
+
+Da für eine gültige Belegung von $3SAT$ alle Klauseln gelten müssen und zu jeder Klausel eine Ungleichung existiert die genau dann gilt wenn die Klausel zu 1 Auswertet liegt diese Transformation in $LP_{\{ 0,1\} }$. Da diese Transformation in $O(l)$ liegt ist die auch Polinominell. $ \Rightarrow 3SAT \leq_p  LP_{\{ 0,1\} }$
