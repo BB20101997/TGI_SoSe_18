@@ -1,1 +1,47 @@
 \section*{Aufgabe 3}
+
+\subsection*{a)}
+ Eine erfüllende Belegung von $(a_1 \vee a_2 \vee \neg a_3)\wedge (\neg a_1 \vee  a_2  \vee a_3)$ was Element von $3SAT$ ist, ist eine erfüllende Belegung von:
+ \begin{list}{}{}
+ \item $0 \leq 1*a_1+1*a_2-1*a_3$
+ \item $0 \leq -1*a_1+1*a_2+1*a_3$
+ \end{list} ist was Element von $LP_{\{0,1\}} $ ist. \\
+ 
+Da Beide Klausen zu 1 ausgewertet werden müssen betrachte Die erste Klausel mit der ersten Ungleichung:
+Die Klausel wertet nur zu eins aus wenn $a_1$ oder $a_2$ zu 1 auswerten oder $a_3$ zu 0. Mit anderen Worten es ist nicht 1 wenn $a_1=a_2=1$ und $a_3=1$. Die Ungleichung kann nur nicht gelten wenn $a_3=1$ da es der einzige negative Factor ist dafür müssen $a_1$ und $a_2$ aber 0 Sein damit die rechte Seite negativ wird, daraus folgt die Ungleichung ist nur ungültig wenn $a_1=a_2=1$ und $a_3=1$. 
+Gleiche Begründung für die 2. Klausel und Ungleichung. Da beide Klausel zu 1 Auswerten müssen und beide Ungleichungen erfüllt werden müssen folgt daraus dass eine Erfüllende Belegung von diesem $3SAT$ Problem zu einer erfüllenden Belegung dieses $LP_{\{0,1\}}$ Problems wird.
+
+\subsection*{b)}
+Ich nehme an dass Zahlen immer eine Codierung (Binär/Decimal) haben:
+\begin{enumerate}
+\item Für jede Ungleichung speichere die Codierung der Zahl links vom $\leq$ dann Speichere das $\leq$ Zeichen.
+\item für jede Zahl der Form $m_{i,j}$ Speichere ihren Start mit dem Zeichen $m$ dann die Codierung der Zahl mit Vorzeichen.
+\item Für jede Variable Speichere das Zeichen $X$ und die Codierung ihres Indexes wenn noch eine Variable folgt führe 2. aus
+\item ist die Letzte Variable der Ungleichung codiert markiere das ende der Ungleichung mit \# wenn noch eine weitere Ungleichung existiert gehe zu 1.
+
+\end{enumerate}
+
+Dies ist in Polinominalzeit zu erzeugen da:
+\begin{list}{-}{}
+\item Der 1. schritt Konstant viel zeit braucht.
+\item Der 2. Schritt maximal k mal pro Ungleichung ausgeführt wird und die Codierung maximal polinominell ist 
+\item Der 3. Schritt maximal k mal pro Ungleichung ausgeführt wird und die Codierung maximal polinominell ist 
+\item Der 4. Schritt Konstant viel zeit verbraucht und die Schritte 1-3 maximal l mal ausführen lässt.
+
+\end{list}
+
+ Daraus folgt diese Codierung in $O(l*k)$ ausgeführt werden kann, also polinomiell.
+ 
+\subsection*{c)} 
+Zu zeigen $LP_{\{0,1\}} \in NP$ und $3SAT \leq_p LP_{\{0,1\}}$
+
+Zeige $LP_{\{0,1\}} \in NP$ über polinominellen Verifikator über Eingabe $<<U>,e>$:
+\begin{enumerate}
+\item Setze i=1
+\item Nutze Funktion e auf $U_i$ an (Polinomiell da e polinomiell ($O(k)$))
+\item Prüfe ob Ungleichung erfüllt ist wenn nicht verwerfe (Polinomiell da nur Addition und Multiplikation)
+\item Wenn $i+1 \leq l$ setze $i=i+1$ und gehe zu 2. , wenn nicht akzeptiere (Polinominell da nur $1$ vergleich und maximal l Widerholungen.) 
+\end{enumerate}
+Dieser Verifikator prüft ob $e$ eine Lösung für $<U>$ ist in $O(l*k)$ Zeit 
+
+Sei $((X_1,\ldots ,X_k),(K_1, \ldots , K_l)) \in 3SAT$ mit $(X_1,\ldots ,X_k)$ als $k$ Variablen und $(K_1, \ldots , K_l$ als $l$ Klauseln. 
