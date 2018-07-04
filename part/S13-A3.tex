@@ -1,1 +1,45 @@
 \section*{Aufgabe 3}
+
+\subsection*{a)}
+
+\subsubsection*{1)}
+
+Sei $L_1 = \{\langle M,N \rangle | M \textit{ und } N \textit{sind Truingmachinen und } L(M) \cap L(N) \neq \emptyset\}$
+
+\paragraph*{Behauptung}
+
+$L_1$ ist nicht Turing-entscheidbar
+
+\paragraph*{Beweis}~
+
+Sei $\forall w \in \Sigma: K_w$ die Turing Maschine welche nur für die Eingabe w akzeptiert.
+
+Dann gilt mit f: $HALT  \to L_1,  \langle M, w \rangle \mapsto \langle M^\prime, K_w \rangle$ wobei $M^\prime$ aus $M$ hervorgeht indem alle verwerfenden Zustände in akzeptierende abgeändert werden.:
+
+$w \in HALT \Leftrightarrow f(w) \in L_1$
+
+$\Rightarrow HALT \leq L_1$
+
+Da für $HALT$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_1$ nicht Turing-entscheidbar sein.
+
+\subsubsection*{2)}
+
+Sei $L_2 = \{ \langle M \rangle | M \textit{ ist Turingmaschine und }\varphi_M(0) = \langle M \rangle \}$
+
+\paragraph*{Behauptung}
+
+$L_2$ ist nicht Turing-entscheidbar.
+
+\paragraph*{Beweis}~
+
+Sei $f: HALT \to L_2, \langle M, w \rangle \mapsto \langle M^\prime \rangle$ wobei $M^\prime$
+wie folgt arbeitet:
+
+$M^\prime$ löscht die Eingabe vom Band und schreibt dann $w$ aufs Band,
+dann simuliert $M^\prime$ $M$ , dann löscht $M^\prime$ das Band und schreibt $\langle M' \rangle$ aufs Band.
+
+Dann gilt $w \in HALT \Leftrightarrow f(w) \in L_2$
+
+$\Rightarrow HALT \leq L_2$ 
+
+Da für $HALT$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_2$ nicht Turing-entscheidbar sein.  

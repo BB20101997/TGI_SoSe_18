@@ -1,1 +1,64 @@
 \section*{Aufgabe 1}
+%%TODO 1c), und 4)
+
+Seien $L_1, L_2 \subseteq \{0,1\}^*$ Sprachen.
+
+\subsection*{a)}
+
+Sei $L_1 \leq L_2$.
+
+\subsubsection*{Behauptung}
+
+$\overline{L_1} \leq \overline{L_2}$
+
+\subsubsection*{Beweis}
+
+Da $L_1 \leq L_2$ existiert f so dass gilt:
+
+$w \in L_1 \Leftrightarrow f(w) \in L_2$
+
+$\Rightarrow w \notin L_1 \Leftrightarrow f(w) \notin L_2$
+
+$\Rightarrow w \in \overline{L_1} \Leftrightarrow f(w) \in \overline{L_2}$ nach Definition von $\overline{\cdot}$
+
+Das bedeutet $\overline{L_1} \leq \overline{L_2}$.
+
+
+\subsection*{b)}
+
+Sei $L_1$ Turing-erkennbar und $L_1 \leq \overline{L_1}$ 
+
+\subsubsection*{Behauptung}
+
+$L_1$ ist Turing-entscheidbar
+
+
+\subsubsection*{Beweis}
+
+Da $L_1 \leq \overline{L_1}$ existiert f so dass gilt:
+
+$w \in L_1 \Leftrightarrow f(w) \in \overline{L_1}$
+
+$\Rightarrow  w \notin L_1 \Leftrightarrow f(w) \notin \overline{L_1}$
+
+$\Rightarrow w \in \overline{L_1} \Leftrightarrow f(w) \in L_1$
+
+Damit ist $\overline{L_1} \leq L_1$ und $\overline{L_1}$ Turing-erkennbar, damit ist die Sprache $L_1$ und ihr komplement erkennbar damit ist sie auch Turing-entscheidbar.
+
+
+\subsection*{c)}
+
+\subsubsection*{Behauptung}
+
+%% Für jedes nicht Turing-entscheidbare Problem $L_1$, 
+%% existiert eine nicht Turing-entscheidbares Problem mit $L_2 < L_1$
+
+Es gibt kein nicht Turing-entscheidbares Problem $L_1$, sodass für alle nicht Turing-entscheidbaren
+Probleme $L_2$ die Eigenschaft $L_1 \leq L_2$ gilt.
+
+\subsubsection*{Beweis}
+
+
+
+
+
