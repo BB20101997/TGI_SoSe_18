@@ -14,13 +14,13 @@ $L_1$ ist nicht Turing-entscheidbar
 
 Sei $\forall w \in \Sigma: K_w$ die Turing Maschine welche nur für die Eingabe w akzeptiert.
 
-Dann gilt mit f: $HALT  \to L_1,  \langle M, w \rangle \mapsto \langle M^\prime, K_w \rangle$ wobei $M^\prime$ aus $M$ hervorgeht indem alle verwerfenden Zustände in akzeptierende abgeändert werden.:
+Dann gilt mit f: $HALT_{TM}  \to L_1,  \langle M, w \rangle \mapsto \langle M^\prime, K_w \rangle$ wobei $M^\prime$ aus $M$ hervorgeht indem alle verwerfenden Zustände in akzeptierende abgeändert werden.:
 
-$w \in HALT \Leftrightarrow f(w) \in L_1$
+$w \in HALT_{TM} \Leftrightarrow f(w) \in L_1$
 
-$\Rightarrow HALT \leq L_1$
+$\Rightarrow HALT_{TM} \leq L_1$
 
-Da für $HALT$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_1$ nicht Turing-entscheidbar sein.
+Da für $HALT_{TM}$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_1$ nicht Turing-entscheidbar sein.
 
 \subsubsection*{2)}
 
@@ -32,14 +32,21 @@ $L_2$ ist nicht Turing-entscheidbar.
 
 \paragraph*{Beweis}~
 
-Sei $f: HALT \to L_2, \langle M, w \rangle \mapsto \langle M^\prime \rangle$ wobei $M^\prime$
+Sei $f: HALT_{TM} \to L_2, \langle M, w \rangle \mapsto \langle M^\prime \rangle$ wobei $M^\prime$
 wie folgt arbeitet:
 
-$M^\prime$ löscht die Eingabe vom Band und schreibt dann $w$ aufs Band,
-dann simuliert $M^\prime$ $M$ , dann löscht $M^\prime$ das Band und schreibt $\langle M' \rangle$ aufs Band.
+(1) Lösche die Eingabe vom Band
 
-Dann gilt $w \in HALT \Leftrightarrow f(w) \in L_2$
+(2) Schreibe $w$ aufs Band
 
-$\Rightarrow HALT \leq L_2$ 
+(3) Simuliere $M$ 
 
-Da für $HALT$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_2$ nicht Turing-entscheidbar sein.  
+(4) Lösche das Band
+
+(5) Schreibe $\langle M^\prime \rangle$ aufs Band
+
+Dann gilt $w \in HALT_{TM} \Leftrightarrow f(w) \in L_2$
+
+$\Rightarrow HALT_{TM} \leq L_2$ 
+
+Da für $HALT_{TM}$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_2$ nicht Turing-entscheidbar sein.  
