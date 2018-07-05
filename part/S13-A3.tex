@@ -50,3 +50,97 @@ Dann gilt $w \in HALT_{TM} \Leftrightarrow f(w) \in L_2$
 $\Rightarrow HALT_{TM} \leq L_2$ 
 
 Da für $HALT_{TM}$ bekannt ist das es nicht Turing-entscheidbar ist, kann damit auch $L_2$ nicht Turing-entscheidbar sein.  
+
+\subsection*{b)}
+
+\subsubsection*{3)}
+$L_3=\{\langle M \rangle | M$ ist TM und $\exists w \in \{0,1\}^* \varphi_M(w)=w\}$ ist trivialerweise äquivalent zu $F = \{ \varphi_M | \exists w \in \{0,1\}^* \varphi_M(w)=w \}$
+und $L(F)=\{ \langle M \rangle | M$ ist $TM$ und $\varphi_M \in F \}$
+
+$F$ Beinhaltet nur berechenbare Funktionen daher ist nur noch zu Zeigen:
+
+$L(F) \neq \mathbb{F} \wedge L(F) \neq \emptyset $
+
+\paragraph*{Behauptung 1)}
+$L(F) \neq \mathbb{F}$
+
+\paragraph*{Beweis 1)}~
+
+Sei M TM die an die erste stelle des Wortes das inverse Zeichen schreibt, oder falls das Wort leer ist 1 an die erste stelle des Bandes, dann treten folgende Fälle ein 
+\paragraph*{$w=\varepsilon$}
+Dann gilt $\varphi_M(w)=1\neq w$ 
+\paragraph*{$w \in \{0,1\}^* \backslash \{ \varepsilon \} $}
+Dann existiert $w^{\prime} \in  \{0,1\}^*$ sodass $w=0w^{\prime}$ oder $w=1w^{\prime}$, dann gilt im ersten Fall: $\varphi_M(w)=1w^{\prime} \neq 0w^{\prime}=w$. Und im zweiten Fall: $\varphi_M(w)=0w^{\prime} \neq 1w^{\prime}=w$
+
+Somit gilt für jedes Wort w in $\{0,1\}^*$ dass $\varphi_M(w) \neq w$ somit ist  $\langle M \rangle \notin L(F)$ was bedeutet $L(F) \neq \mathbb{F}$.
+
+\paragraph*{Behauptung 2)}
+$L(F) \neq \emptyset$
+
+\paragraph*{Beweis 2)}
+
+Sei M TM die 1 Zeichen einliest, hält und es ausgibt, dann gilt $\langle M \rangle \in L(F)$ da für $w=1$ gilt $\varphi_M(w)=1=w$
+
+\paragraph*{Folgerung}
+
+Laut dem Satz von Rice ist somit $L(F)$ nicht turing erkennbar und somit ist $L_3$ nicht turing erkennbar.
+
+
+\subsubsection*{4)}
+$L_4=\{\langle M \rangle | M$ ist TM und $\forall n \in \mathbb{N} \varphi_M(bin(n))=bin(7*n+7)\}$ ist trivialerweise äquivalent zu $F = \{ \varphi_M | \forall n \in \mathbb{N} \varphi_M(bin(n))=bin(7*n+7) \}$
+und $L(F)=\{ \langle M \rangle | M$ ist $TM$ und $\varphi_M \in F \}$
+
+$F$ Beinhaltet nur berechenbare Funktionen daher ist nur noch zu Zeigen:
+
+$L(F) \neq \mathbb{F} \wedge L(F) \neq \emptyset $
+
+\paragraph*{Behauptung 1)}
+$L(F) \neq \mathbb{F}$
+
+\paragraph*{Beweis 1)}
+Sei $M$ TM die jedes Wort aus $\{0,1\}^*$ unverändert ausgibt, dann gilt für $w=1=bin(1)$ das folgende $\varphi_M(w)=bin(14)=1110 \neq 1$ somit gilt $\langle M \rangle \notin L(F)$ was bedeutet $L(F) \neq \mathbb{F}$.
+
+\paragraph*{Behauptung 2)}
+$L(F) \neq \emptyset$
+\paragraph*{Beweis 2)}
+Sei $M$ 8-Band TM mit folgenden Eigenschaften:
+\begin{enumerate}
+\item Kopiere die Eingabe von Band 1 auf die Bänder 2 bis 7
+\item Speichere $111=bin(7)$ auf das 8. Band
+\item Addiere die Bänder 2 bis 8 auf das 1. Band 
+\item gib nur das erste Band aus und halte.
+\end{enumerate}
+Dann gilt $\langle M \rangle \in L(F) $
+\paragraph*{Beweis $\langle M \rangle \in L(F) $}
+Wähle $n \in \mathbb{N}$ dann gilt $\varphi_M(bin(n))=bin(n)+bin(n)+bin(n)+bin(n)+bin(n)+bin(n)+bin(n)+bin(7)=bin(n+n+n+n+n+n+n+7)=bin(7*n+7)$ daher folgt $\langle M \rangle \in L(F) $.
+
+Daher Folgt $L(F) \neq \emptyset$ und damit gilt laut dem Satz von Rice, dass $L(F)$ nicht turing erkennbar und somit ist $L_4$ nicht turing erkennbar.
+
+\subsection*{c)}
+
+\subsubsection*{5)}
+Sei $M^+$ TM die jedes Wort aus $\{0,1\}^{\prime}$ unverändert Ausgibt, sonst verwerfe, dann gilt $\forall w \in \{0,1\}^{\prime}$ $\varphi_M(w)=w$ Sei $M$ TM die $M^+$ simuliert und Akzeptiert wenn $\varphi_M(w)=w$ 
+
+Da $M^+$ terminiert und $M$ $M^+$ simuliert und einmal vergleicht terminiert M und akzeptiert wenn $w \in L_5$ und verwirft wenn $w \notin L_5$
+
+\subsubsection*{6)}
+Sei $M$ 3-Band TM wie folgt:
+\begin{enumerate}
+\item Speichere 1 auf das 2. Band.
+\item Speichere 2 auf das 3. Band.
+\item Wenn Eingabe $w$ mit $|w|<1$ gilt akzeptiere.
+\item Wenn Eingabe $w$ mit $|w|=1$ und $w=0$ gilt akzeptiere.
+\item Wenn Eingabe $w$ mit $|w|=2$ und $w=00$ gilt akzeptiere.
+\item Wenn gilt dass das höherwertige Band von 2 oder 3 einen höheren oder gleichen wert hat wie das w lang ist  akzeptiere.
+\item überprüfe ob der Wert von w an der Stelle vom Wert des höherwertigen Bandes von 2. 3. gleich null ist, wenn nicht verwerfe. 
+\item Addiere das höherwertige Band auf das niedrigwertigere und gehe zu 6.
+\end{enumerate}
+\paragraph*{Beweis}
+Für $w \leq 2$ trivial.
+
+
+Wenn $w \in L_6$ gilt dass für den wert an 1,2 bereits überprüft wurde dann ist das höherwertige band der darrauffolgenden Iterationen ebenfalls eine Fibonaccizahl und es wird überprüft ob w an der Stelle des Höherwertigen Bandes 0 ist, da es aufhört wenn das höherwertige band größer oder gleich ist und das niedrigwertigere Band überprüft wurde gilt dass jede Fibonaccizahl f wo gilt $f < |w|$ überprüft wurde und da $w \in L_6$ akzeptiert L,
+Wenn $w \notin L_6$ gilt dass eine Fibonaccizahl f existiert mit $f<|w|$ und $w_f=1$ da M jede fibonaccizahl überprüft verwirft er wenn das Höherwertige band den Wert f erreicht hat.
+
+Da M akzeptiert wenn $w \in L_6$ und verwirft wenn $w \notin L_6$ ist $L_6$ turing-erkennbar.
+
