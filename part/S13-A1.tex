@@ -9,7 +9,7 @@ Sei $L_1 \leq L_2$.
 
 \subsubsection*{Behauptung}
 
-$\overline{L_1} \leq \overline{L_2}$
+Es gilt $\overline{L_1} \leq \overline{L_2}$
 
 \subsubsection*{Beweis}
 
@@ -43,7 +43,7 @@ $\Rightarrow  w \notin L_1 \Leftrightarrow f(w) \notin \overline{L_1}$
 
 $\Rightarrow w \in \overline{L_1} \Leftrightarrow f(w) \in L_1$
 
-Damit ist $\overline{L_1} \leq L_1$ und $\overline{L_1}$ Turing-erkennbar, damit ist die Sprache $L_1$ und ihr komplement erkennbar damit ist sie auch Turing-entscheidbar.
+Damit ist $\overline{L_1} \leq L_1$ und $\overline{L_1}$ Turing-erkennbar, damit ist die Sprache $L_1$ und ihr Komplement Turing-erkennbar damit ist sie auch Turing-entscheidbar.
 
 
 \subsection*{c)}
@@ -58,7 +58,23 @@ Probleme $L_2$ die Eigenschaft $L_1 \leq L_2$ gilt.
 
 \subsubsection*{Beweis}
 
+\paragraph*{Annahme:} Angenommen die Behauptung gilt nicht, also es gibt ein nicht Turing-entscheidbares Problem $L_1$, sodass für alle nicht Turing-entscheidbaren
+Probleme $L_2$ die Eigenschaft $L_1 \leq L_2$ gilt.
 
+\paragraph*{Fall 1:}
+$L_1$ ist Turing-erkennbar.
+
+Würde dann $L_1 \leq L_2$ für alle nicht Turing-entscheidbaren Probleme $L_2$ gelten, so auch für $L_2 = \overline{L_1}$, nach 1b) wäre $L_1$ dann aber Turing-entscheidbar, was ein Widerspruch zur Definition von $L_1$ wäre.
+
+\paragraph*{Fall 2:}
+$L_1$ ist nicht Turing-erkennbar.
+
+Würde dann $L_1 \leq L_2$ für alle nicht Turing-entscheidbaren Probleme $L_2$ gelten.
+Also auch für $L_2$ Turing-erkennbar und nicht Turing-entscheidbar, damit muss aber auch $L_1$ Turing-erkennbar sein. Wir sind also in Fall 1.
+
+\paragraph*{}
+
+Alle Fälle führen zu einem Widerspruch, also ist die Annahme falsch und die Behauptung stimmt.
 
 
 
